@@ -1,5 +1,9 @@
 package com.themepark.qrsystem.model;
 
+import com.themepark.qrsystem.model.Ticket;
+import com.themepark.qrsystem.model.Transaction;
+import com.themepark.qrsystem.model.UserPreferences;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
