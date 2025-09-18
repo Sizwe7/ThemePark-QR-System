@@ -80,9 +80,6 @@ CREATE TYPE payment_method AS ENUM ('CREDIT_CARD', 'DEBIT_CARD', 'MOBILE_WALLET'
 CREATE TYPE entry_status AS ENUM ('VALID', 'EXPIRED', 'USED', 'BLOCKED');
 CREATE TYPE attraction_status AS ENUM ('OPEN', 'CLOSED', 'MAINTENANCE', 'FULL_CAPACITY');
 
--- Enable UUID extension for unique identifiers
-CREATE EXTENSION "uuid-ossp";
-
 -- User Management Schema Tables
 CREATE TABLE user_management.users (
     user_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
