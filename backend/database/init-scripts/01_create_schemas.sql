@@ -1,29 +1,76 @@
+-- =====================================================================================
 -- Theme Park QR Payment & Entrance System
 -- Database Schema Creation Script
 -- Version: 1.0
--- Author: SC MASEKO 402110470
+-- Authors: SC MASEKO (402110470) and SF MHLABA (402312369)
+-- =====================================================================================
 
--- Create database if not exists
-CREATE DATABASE IF NOT EXISTS themepark_qr_system;
+-------------------------------------------------------------------------------------
+-- IMPORTANT:
+-- 1. This script assumes the database "themepark_qr_system" exists.
+--    If it does not, create it manually with:
+--        CREATE DATABASE themepark_qr_system;
+--
+-- 2. PostgreSQL does not support "IF NOT EXISTS" for CREATE DATABASE
+--    (unlike MySQL). That command must be run separately.
+-------------------------------------------------------------------------------------
 
--- Use the database
+-------------------------------------------------------------------------------------
+-- INSTRUCTIONS:
+--
+-- 1. Running in pgAdmin (recommended for beginners):
+--    • Open pgAdmin.
+--    • Connect to your PostgreSQL server.
+--    • Create a new Query Tool session.
+--    • Paste the contents of this script (init.sql) into the editor.
+--    • Run it (lightning bolt button).
+--    ⚠️ DO NOT paste lines that start with "psql ...", as they are terminal commands.
+--
+-- 2. Running from terminal:
+--    • Mac / Linux:
+--        psql -U postgres -d themepark_qr_system -f /full/path/to/init.sql
+--
+--    • Windows (PowerShell or CMD):
+--        psql -U postgres -d themepark_qr_system -f "C:\full\path\to\init.sql"
+--
+--    Notes:
+--      • Replace `/full/path/to/init.sql` or `"C:\full\path\to\init.sql"`
+--        with the actual location of your SQL file.
+--      • Make sure the `psql` command is available (comes with PostgreSQL installation).
+--      • If the "themepark_qr_system" database does not yet exist,
+--        create it first in pgAdmin or using:
+--            CREATE DATABASE themepark_qr_system;
+-------------------------------------------------------------------------------------
+
+-- Create database
+CREATE DATABASE themepark_qr_system;
+
+-- Connect to the newly created database inside your DBMS query tool
 \c themepark_qr_system;
 
--- Create schemas for different modules
+-- Alternative setup instructions:
+-- 1. In pgAdmin, create a database named 'themepark'.
+-- 2. Execute initialization scripts:
+--    psql -U postgres -d themepark -f path/to/init.sql
+--    psql -U postgres -d themepark -f path/to/sample_data.sql
+
+-------------------------------------------------------------------------------------
+-- SCHEMA CREATION BEGINS HERE
+-------------------------------------------------------------------------------------
+
+-- Enable required extensions
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+-- Create schemas for system modules
 CREATE SCHEMA IF NOT EXISTS user_management;
 CREATE SCHEMA IF NOT EXISTS payment_system;
 CREATE SCHEMA IF NOT EXISTS access_control;
 CREATE SCHEMA IF NOT EXISTS analytics;
 CREATE SCHEMA IF NOT EXISTS system_config;
 
--- Set search path to include all schemas
+-- Configure search path
 SET search_path TO user_management, payment_system, access_control, analytics, system_config, public;
-
--- Enable UUID extension for unique identifiers
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
--- Enable pgcrypto for password hashing
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- Create custom types
 CREATE TYPE user_role AS ENUM ('VISITOR', 'STAFF', 'MANAGER', 'ADMIN');
@@ -32,6 +79,9 @@ CREATE TYPE payment_status AS ENUM ('PENDING', 'COMPLETED', 'FAILED', 'REFUNDED'
 CREATE TYPE payment_method AS ENUM ('CREDIT_CARD', 'DEBIT_CARD', 'MOBILE_WALLET', 'QR_PAYMENT');
 CREATE TYPE entry_status AS ENUM ('VALID', 'EXPIRED', 'USED', 'BLOCKED');
 CREATE TYPE attraction_status AS ENUM ('OPEN', 'CLOSED', 'MAINTENANCE', 'FULL_CAPACITY');
+
+-- Enable UUID extension for unique identifiers
+CREATE EXTENSION "uuid-ossp";
 
 -- User Management Schema Tables
 CREATE TABLE user_management.users (
