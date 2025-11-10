@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live System Demonstration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Main Title -->
+        <h1 style="font-size: 56px; font-weight: 800; color: #FFFFFF; margin-bottom: 32px; line-height: 1.2;">
+            Live System Demonstration
+        </h1>
+
+        <!-- Subtitle -->
+        <p style="font-size: 28px; font-weight: 400; color: #DBEAFE; margin-bottom: 64px;">
+            See the working system in action
+        </p>
+
+        <!-- Demo Areas -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; width: 100%; max-width: 1000px;">
+            <!-- Visitor App -->
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 32px; border-radius: 16px; backdrop-filter: blur(10px);">
+                <div style="font-size: 48px; margin-bottom: 16px;">📱</div>
+                <h3 style="font-size: 24px; font-weight: 700; color: #10B981; margin-bottom: 12px;">Visitor App</h3>
+                <p style="font-size: 18px; color: #E5E7EB; line-height: 1.5;">Registration, login, ticket purchase, QR code display</p>
+            </div>
+
+            <!-- Staff Dashboard -->
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 32px; border-radius: 16px; backdrop-filter: blur(10px);">
+                <div style="font-size: 48px; margin-bottom: 16px;">💼</div>
+                <h3 style="font-size: 24px; font-weight: 700; color: #10B981; margin-bottom: 12px;">Staff Dashboard</h3>
+                <p style="font-size: 18px; color: #E5E7EB; line-height: 1.5;">Real-time analytics, user management, revenue tracking</p>
+            </div>
+
+            <!-- Complete Workflow -->
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 32px; border-radius: 16px; backdrop-filter: blur(10px);">
+                <div style="font-size: 48px; margin-bottom: 16px;">🔄</div>
+                <h3 style="font-size: 24px; font-weight: 700; color: #10B981; margin-bottom: 12px;">End-to-End Flow</h3>
+                <p style="font-size: 18px; color: #E5E7EB; line-height: 1.5;">Complete ticket purchase and validation process</p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="margin-top: 64px;">
+            <p style="font-size: 32px; font-weight: 600; color: #10B981;">
+                Let's see it in action →
+            </p>
+        </div>
+    </div>
+</body>
+</html>

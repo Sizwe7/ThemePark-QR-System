@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "title": "Theme Park QR Payment & Entrance System",
+    "created": 1762761661.4082234,
+    "last_updated": 1762761773.6371188,
+    "total_slides": 4
+  },
+  "slides": {
+    "title_slide": "edited",
+    "problem_solution": "edited",
+    "system_functionalities": "edited",
+    "live_demo": "edited"
+  },
+  "outline": [
+    {
+      "id": "title_slide",
+      "title": "Theme Park QR Payment & Entrance System",
+      "summary": "Title slide introducing the project with student information and key system highlights",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "problem_solution",
+      "title": "The Problem We're Solving",
+      "summary": "Clear statement of the queue management and payment processing challenges at theme parks, with the QR-based solution approach",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "system_functionalities",
+      "title": "System Functionalities",
+      "summary": "List of core system features in A, B, C, D format: QR ticket generation, mobile payment processing, real-time queue management, and admin analytics dashboard",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "live_demo",
+      "title": "Live System Demonstration",
+      "summary": "Transition slide indicating the live demo will showcase visitor app, staff dashboard, and end-to-end ticket purchase workflow",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}
